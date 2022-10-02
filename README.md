@@ -8,8 +8,16 @@ Generate slides from inkscape svg with LaTeX beamer overlay syntax.
 - Append beamer overlay syntax to layer label
 - Only available for **top level** layers
 
-```
+```sh
 python3 inkscape-slide.py ./sample.svg
+```
+
+
+```sh
+# change output format
+python inkscape-slide.py example/sample.svg \
+    --inkscape-args \
+    '--export-type=png --export-text-to-path --export-background=white'
 ```
 
 ## Example
