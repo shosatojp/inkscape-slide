@@ -1,23 +1,20 @@
 # inkscape-slide
 
-Generate slides from inkscape svg with LaTeX beamer overlay syntax.
+Generate slides from inkscape svg with LaTeX beamer overlay syntax[1].
 
 ## Usage
 
-- Create SVG with Inkscape
-- Append beamer overlay syntax to layer label
-- Only available for **top level** layers
+1. Create SVG with Inkscape
+2. Append beamer overlay syntax to layer label
+    - Only available for **top level** layers
 
 ```sh
-python3 inkscape-slide.py ./sample.svg
+python3 inkscape-slide.py ./example/sample.svg
 ```
-
 
 ```sh
 # change output format
-python inkscape-slide.py example/sample.svg \
-    --inkscape-args \
-    '--export-type=png --export-text-to-path --export-background=white'
+python inkscape-slide.py ./example/sample.svg --format '{0}-{1:03d}.png'
 ```
 
 ## Example
@@ -28,7 +25,7 @@ python inkscape-slide.py example/sample.svg \
 <img src="example/sample-2.png" width="150px">
 <img src="example/sample-3.png" width="150px">
 
-## Syntax
+## Layer label syntax
 
 ```
 <1>
@@ -39,3 +36,7 @@ item<1-3>
 item<1->
 item<-3>
 ```
+
+## References
+
+- [1] [The beamer class User Guide for version 3.68.](http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf) 3.10 Using Overlay Specifications

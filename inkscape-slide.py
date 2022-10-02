@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from typing import Dict, NamedTuple
 import argparse
 from lxml import etree
@@ -88,8 +89,7 @@ def render(input_path: str, **kwargs):
 
     for slide_id in slide_ids:
         base, _ = os.path.splitext(input_path)
-        output_svg_path = base + f"-{slide_id}.svg"
-        output_pdf_path = base + f"-{slide_id}.pdf"
+        output_image_path = kwargs["format"].format(base, slide_id)
 
         for layer_tuple in layers:
             if layer_tuple.slide_tuple is None:
@@ -102,12 +102,16 @@ def render(input_path: str, **kwargs):
 
         # output svg
         if kwargs["svg"]:
+            output_svg_base, _ = os.path.splitext(output_image_path)
+            output_svg_path = output_svg_base + ".svg"
+
             with open(output_svg_path, "wb") as fp:
                 fp.write(etree.tostring(doc))
 
         # output
+        print(f"generating slide {slide_id}", file=sys.stderr)
         subprocess.run(
-            f"inkscape --pipe {kwargs['inkscape_args']} -o {output_pdf_path}",
+            f"{kwargs['inkscape_path']} --pipe {kwargs['inkscape_args']} -o {output_image_path}",
             input=etree.tostring(doc),
             shell=True,
             check=True,
@@ -115,14 +119,20 @@ def render(input_path: str, **kwargs):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser("svg-slide-export.py")
+    parser = argparse.ArgumentParser("inkscape-slide.py")
     parser.add_argument("input", help="input svg path")
-    parser.add_argument("--svg", action="store_true", default=False)
     parser.add_argument(
-        "--inkscape-args",
-        type=str,
-        default="--export-type=pdf --export-text-to-path --export-background=white",
+        "--svg", action="store_true", default=False, help="emit generated svg"
     )
+    parser.add_argument(
+        "--format",
+        "-f",
+        type=str,
+        default=r"{0}-{1:03d}.pdf",
+        help=r"Python format string. {0}: base path, {1}: slide id",
+    )
+    parser.add_argument("--inkscape-path", type=str, default="inkscape")
+    parser.add_argument("--inkscape-args", type=str, default="--export-text-to-path")
     args = parser.parse_args()
 
     render(args.input, **vars(args))
