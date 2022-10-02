@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   sodipodi:docname="sample.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.28"
+     inkscape:cx="114.45313"
+     inkscape:cy="171.09375"
+     inkscape:window-width="949"
+     inkscape:window-height="742"
+     inkscape:window-x="8"
+     inkscape:window-y="679"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5"
+     showguides="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Background">
+    <rect
+       style="fill:#3465a4;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="rect2419"
+       width="256"
+       height="256"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="layer2"
+     inkscape:label="Item&lt;3&gt;"
+     inkscape:groupmode="layer">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="67.62001"
+       y="187.47908"
+       id="text1899-7"
+       inkscape:label="item3"><tspan
+         sodipodi:role="line"
+         id="tspan1897-5"
+         x="67.62001"
+         y="187.47908">Item 3</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Item&lt;2-3&gt;">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="67.62001"
+       y="141.41185"
+       id="text1899-3"
+       inkscape:label="item2"><tspan
+         sodipodi:role="line"
+         id="tspan1897-6"
+         x="67.62001"
+         y="141.41185">Item 2</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Item&lt;1-&gt;">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="67.62001"
+       y="95.344589"
+       id="text1899"
+       inkscape:label="item1"><tspan
+         sodipodi:role="line"
+         id="tspan1897"
+         x="67.62001"
+         y="95.344589">Item 1</tspan></text>
+  </g>
+</svg>
